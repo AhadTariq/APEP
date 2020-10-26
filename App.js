@@ -9,16 +9,7 @@ import AppText from './app/components/AppText.js';
 export default function App() {
   
   return(
-    <View 
-    style={{
-      flex:1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-    >
-      <AppButton title="Login" onPress={()}></AppButton>
-      <AppButton title="Signup"></AppButton>
-    </View>
+    <WelcomeScreen/>
   )
 }
 
