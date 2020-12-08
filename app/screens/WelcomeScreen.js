@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, View, Text } from 'react-native';
 import AppButton from '../components/AppButton.js';
+import ViewImageScreen from './ViewImageScreen.js';
 
 function WelcomeScreen(props) {
     return (
@@ -18,7 +19,7 @@ function WelcomeScreen(props) {
            </View>
        </ImageBackground>
     );
-}
+} 
 
 const styles = StyleSheet.create({
     background: {
