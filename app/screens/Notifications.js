@@ -61,7 +61,7 @@ function Notifications(props) {
                     //             backgroundColor: "red",
                     //             width: 70,
                     //         }}
-                    //     ></View>
+                    //      ></View>
                     // )}
                 />
             )}

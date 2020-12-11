@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
+import Screen from './app/components/Screen'
+import { StyleSheet, Text, View, Image, SafeAreaView, Button, Alert, Dimensions, TextInput } from 'react-native';
+import Icon from './app/components/Icon';
+import ListItem from './app/components/ListItems';
 
-import { StyleSheet, Text, View, Image, SafeAreaView, Button, Alert, Dimensions } from 'react-native';
- 
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import AppButton from './app/components/AppButton';
@@ -12,10 +14,17 @@ import AppText from './app/components/AppText.js';
 import DashboardScreen from './app/screens/DashboardScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import Notifications from './app/screens/Notifications';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
 export default function App() {
-  
+  const [firstName, setFirstName] = useState('');
+
+
   return(
-   <Notifications/>
+   <Screen>
+     <AppTextInput placeholder="Username" icon="email"/>
+   </Screen>
   )
 }
 
