@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 import Screen from './app/components/Screen'
-import { StyleSheet, Text, View, Image, SafeAreaView, Button, Alert, Dimensions, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, Button, Alert, Dimensions, TextInput, Switch } from 'react-native';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItems';
 
@@ -18,12 +18,10 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput';
 export default function App() {
-  const [firstName, setFirstName] = useState('');
-
-
+  const [isNew, setIsNew] = useState(false);
   return(
    <Screen>
-     <AppTextInput placeholder="Username" icon="email"/>
+     <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)}/>
    </Screen>
   )
 }
