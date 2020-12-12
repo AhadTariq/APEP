@@ -6,4 +6,5 @@ export default {
     Lightgrey: "#6e6969",
     danger: "#ff5252",
     yellow: "#ffe66d",
+    Silver: "#dbd3d3",
 };

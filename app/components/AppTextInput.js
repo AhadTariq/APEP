@@ -9,7 +9,7 @@ function AppTextInput({ icon, ...otherProps }) {
     return (
        <View style={styles.container}>
           {/* Using conditional redering */}
-           {icon && <MaterialCommunityIcons name={icon} size={20} color={colors.danger} style={styles.icon}/>}
+           {icon && <MaterialCommunityIcons name={icon} size={30} color={colors.secondary} style={styles.icon}/>}
            <TextInput style={defaultStyles.text} {...otherProps}/> 
        </View>
     );
@@ -17,7 +17,7 @@ function AppTextInput({ icon, ...otherProps }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.Lightgrey,
+        backgroundColor: colors.Silver,
         borderRadius: 25,
         flexDirection: "row",
         width: '100%',
