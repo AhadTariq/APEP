@@ -24,9 +24,8 @@ import SignupScreen from './app/screens/SignupScreen';
 export default function App() {
   
   return(
-   <WelcomeScreen/>
+   <LoginScreen/>
   )
-
 }
 
 

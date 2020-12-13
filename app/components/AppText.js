@@ -9,20 +9,20 @@ function AppText({children}) {
     );
 }
  
-// const styles = StyleSheet.create({
-//     text: {
-//         color:"tomato",
-//         ...Platform.select({
-//                     ios: {
-//                         fontSize: 20,
-//                         fontFamily: "Avenir",
-//                     },
-//                     android: {
-//                         fontSize: 15,
-//                         fontFamily: "Roboto",
-//                     }
-//                 })
-//            },
-// })
+const styles = StyleSheet.create({
+    text: {
+        color:"tomato",
+        ...Platform.select({
+                    ios: {
+                        fontSize: 20,
+                        fontFamily: "Avenir",
+                    },
+                    android: {
+                        fontSize: 15,
+                        fontFamily: "Roboto",
+                    }
+                })
+           },
+})
 
 export default AppText;
