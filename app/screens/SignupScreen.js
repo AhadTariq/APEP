@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Image, StyleSheet, Text } from 'react-native'
 import AppButton from '../components/AppButton';
 import AppTextInput from '../components/AppTextInput';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 import Screen from '../components/Screen';
+import ErrorMessage from '../components/ErrorMessage';
 
-function LoginScreen(props) {
-   
+const validationSchema = Yup.object().shape({
+    firstname: Yup.string().required().max(10, 'Must be 10 characters or less').label("FirstName"),
+    lastname: Yup.string().required().max(15, 'Must be 12 characters or less').label("LastName"),
+    email: Yup.string().required().email().label("Email"),
+    password: Yup.string().required().min(4).label("Password")
+});
 
-    const [firstname, setFirstname] = useState();
-    const [lastname, setLastname] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+function SignupScreen(props) {
    
     return (
       <Screen style={styles.container}>
@@ -19,43 +23,64 @@ function LoginScreen(props) {
                 style={styles.logo}
                 source={require("../assets/logo.jpg")}/>
             <Text style={styles.tagline}>Academic Program Evaluation Portal</Text>
-            <AppTextInput
-                autoCapitalize="words"
-                autoCorrect={true}
-                icon="account"
-                keyboardType="default"
-                onChangeText={text => setFirstname(text)}
-                placeholder="First Name"
-                textContentType="name"
-            />
-            <AppTextInput
-                autoCapitalize="words"
-                autoCorrect={true}
-                icon="account"
-                keyboardType="default"
-                onChangeText={text => setLastname(text)}
-                placeholder="Last Name"
-                textContentType="name"
-            />
-            <AppTextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="email"
-                keyboardType="email-address"
-                onChangeText={text => setEmail(text)}
-                placeholder="Email"
-                textContentType="emailAddress"
-                />
-            <AppTextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="lock"
-                onChangeText={text => setPassword(text)}
-                placeholder="Password"
-                secureTextEntry
-                textContentType="password"
-            />
-            <AppButton title="Sign Up" onPress={() => console.log(firstname, lastname, email, password)} color="secondary"/>
+            <Formik
+                initialValues={{firstname: '', lastname: '', email: '', password: ''}}
+                onSubmit={values => console.log(values)}
+                validationSchema={validationSchema}
+                >
+                    {({handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
+                        <>
+                            <AppTextInput
+                                autoCapitalize="words"
+                                autoCorrect={true}
+                                icon="account"
+                                keyboardType="default"
+                                onBlur={() => setFieldTouched("firstname")}
+                                onChangeText={handleChange("firstname")}
+                                placeholder="First Name"
+                                textContentType="name"
+                            />
+                            {<ErrorMessage error={errors.firstname} visible={touched}/>}
+                            <AppTextInput
+                                autoCapitalize="words"
+                                autoCorrect={true}
+                                icon="account"
+                                keyboardType="default"
+                                onBlur={() => setFieldTouched("lastname")}
+                                onChangeText={handleChange("lastname")}
+                                onChangeText={text => setLastname(text)}
+                                placeholder="Last Name"
+                                textContentType="name"
+                            />
+                            {<ErrorMessage error={errors.lastname} visible={touched}/>}
+                            <AppTextInput
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                icon="email"
+                                keyboardType="email-address"
+                                onBlur={() => setFieldTouched("email")}
+                                onChangeText={handleChange("email")}
+                                placeholder="Email"
+                                textContentType="emailAddress"
+                                />
+                            {<ErrorMessage error={errors.email} visible={touched}/>}
+                            <AppTextInput
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                icon="lock"
+                                onBlur={() => setFieldTouched("password")}
+                                onChangeText={handleChange("password")}
+                                placeholder="Password"
+                                secureTextEntry
+                                textContentType="password"
+                            />
+                            {<ErrorMessage error={errors.password} visible={touched}/>}
+                            <AppButton title="Sign Up" 
+                            onPress={handleSubmit} color="secondary"/>
+                        </>
+                    )}
+            
+            </Formik>
       </Screen>  
     );
 }
@@ -78,4 +103,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default LoginScreen;
+export default SignupScreen;

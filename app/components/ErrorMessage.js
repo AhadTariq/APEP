@@ -3,9 +3,9 @@ import React from 'react';
 import AppText from './AppText';
 
 
-function ErrorMessage({ error }) {
+function ErrorMessage({ error, visible }) {
     
-    if (!error) return null;
+    if (!visible || !error) return null;
     
     return (
        <AppText style={{color: 'red'}}>{error}</AppText>
