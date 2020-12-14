@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import Screen from '../components/Screen';
 import ErrorMessage from '../components/ErrorMessage';
 import AppFormField from '../components/AppFormField';
+import SubmitButton from '../components/SubmitButton';
 
 const validationSchema = Yup.object().shape({
     firstname: Yup.string().required().max(10, 'Must be 10 characters or less').label("FirstName"),
@@ -31,7 +32,7 @@ function SignupScreen(props) {
                 >
                     {({handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
                         <>
-                            <AppTextInput
+                            <AppFormField
                                 autoCapitalize="words"
                                 autoCorrect={true}
                                 icon="account"
@@ -43,7 +44,7 @@ function SignupScreen(props) {
                                 textContentType="name"
                             />
                             {/* {<ErrorMessage error={errors.firstname} visible={touched}/>} */}
-                            <AppTextInput
+                            <AppFormField
                                 autoCapitalize="words"
                                 autoCorrect={true}
                                 icon="account"
@@ -56,7 +57,7 @@ function SignupScreen(props) {
                                 textContentType="name"
                             />
                             {/* {<ErrorMessage error={errors.lastname} visible={touched}/>} */}
-                            <AppTextInput
+                            <AppFormField
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="email"
@@ -68,7 +69,7 @@ function SignupScreen(props) {
                                 textContentType="emailAddress"
                                 />
                             {/* {<ErrorMessage error={errors.email} visible={touched}/>} */}
-                            <AppTextInput
+                            <AppFormField
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="lock"
@@ -80,8 +81,9 @@ function SignupScreen(props) {
                                 textContentType="password"
                             />
                             {/* {<ErrorMessage error={errors.password} visible={touched}/>} */}
-                            <AppButton title="Sign Up" 
-                            onPress={handleSubmit} color="secondary"/>
+                            <SubmitButton title="Sign up"/>
+                            {/* <AppButton title="Sign Up" 
+                            onPress={handleSubmit} color="secondary"/> */}
                         </>
                     )}
             
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         alignSelf: 'center',
-        marginTop:50,
+        marginTop:20,
         marginBottom: 20,
     },
     tagline: {
