@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppText from './AppText';
+import AppText from '../AppText';
 
 
 function ErrorMessage({ error, visible }) {

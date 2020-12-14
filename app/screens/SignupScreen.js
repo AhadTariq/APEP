@@ -6,9 +6,9 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import Screen from '../components/Screen';
-import ErrorMessage from '../components/ErrorMessage';
-import AppFormField from '../components/AppFormField';
-import SubmitButton from '../components/SubmitButton';
+
+import {ErrorMessage, AppFormField, SubmitButton} from '../components/forms/index';
+
 
 const validationSchema = Yup.object().shape({
     firstname: Yup.string().required().max(10, 'Must be 10 characters or less').label("FirstName"),
