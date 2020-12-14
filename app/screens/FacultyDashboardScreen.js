@@ -35,7 +35,7 @@ const menuItems = [
         title: "Give Suggestions",
         icon: {
             name: "email",
-            backgroundColor: colors.secondary
+            backgroundColor: colors.danger,
         }
     },
     {
