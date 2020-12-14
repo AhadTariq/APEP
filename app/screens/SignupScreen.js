@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 
 import Screen from '../components/Screen';
 import ErrorMessage from '../components/ErrorMessage';
+import AppFormField from '../components/AppFormField';
 
 const validationSchema = Yup.object().shape({
     firstname: Yup.string().required().max(10, 'Must be 10 characters or less').label("FirstName"),
@@ -35,46 +36,50 @@ function SignupScreen(props) {
                                 autoCorrect={true}
                                 icon="account"
                                 keyboardType="default"
-                                onBlur={() => setFieldTouched("firstname")}
-                                onChangeText={handleChange("firstname")}
+                                name="firstname"
+                                // onBlur={() => setFieldTouched("firstname")}
+                                // onChangeText={handleChange("firstname")}
                                 placeholder="First Name"
                                 textContentType="name"
                             />
-                            {<ErrorMessage error={errors.firstname} visible={touched}/>}
+                            {/* {<ErrorMessage error={errors.firstname} visible={touched}/>} */}
                             <AppTextInput
                                 autoCapitalize="words"
                                 autoCorrect={true}
                                 icon="account"
                                 keyboardType="default"
-                                onBlur={() => setFieldTouched("lastname")}
-                                onChangeText={handleChange("lastname")}
+                                name="lastname"
+                                // onBlur={() => setFieldTouched("lastname")}
+                                // onChangeText={handleChange("lastname")}
                                 onChangeText={text => setLastname(text)}
                                 placeholder="Last Name"
                                 textContentType="name"
                             />
-                            {<ErrorMessage error={errors.lastname} visible={touched}/>}
+                            {/* {<ErrorMessage error={errors.lastname} visible={touched}/>} */}
                             <AppTextInput
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="email"
                                 keyboardType="email-address"
-                                onBlur={() => setFieldTouched("email")}
-                                onChangeText={handleChange("email")}
+                                name="email"
+                                // onBlur={() => setFieldTouched("email")}
+                                // onChangeText={handleChange("email")}
                                 placeholder="Email"
                                 textContentType="emailAddress"
                                 />
-                            {<ErrorMessage error={errors.email} visible={touched}/>}
+                            {/* {<ErrorMessage error={errors.email} visible={touched}/>} */}
                             <AppTextInput
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="lock"
-                                onBlur={() => setFieldTouched("password")}
-                                onChangeText={handleChange("password")}
+                                name="password"
+                                // onBlur={() => setFieldTouched("password")}
+                                // onChangeText={handleChange("password")}
                                 placeholder="Password"
                                 secureTextEntry
                                 textContentType="password"
                             />
-                            {<ErrorMessage error={errors.password} visible={touched}/>}
+                            {/* {<ErrorMessage error={errors.password} visible={touched}/>} */}
                             <AppButton title="Sign Up" 
                             onPress={handleSubmit} color="secondary"/>
                         </>
