@@ -9,6 +9,7 @@ import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import colors from '../config/colors';
 import ErrorMessage from '../components/ErrorMessage';
+import AppFormField from '../components/AppFormField';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label("Email"),
@@ -30,30 +31,32 @@ function LoginScreen(props) {
                 >
                    {({handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
                        <>
-                        <AppTextInput
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="email"
                             keyboardType="email-address"
-                            onBlur={() => setFieldTouched("email")}
-                            onChangeText={handleChange("email")}
+                            name="email"
+                            // onBlur={() => setFieldTouched("email")}
+                            // onChangeText={handleChange("email")}
                             placeholder="Email"
                             textContentType="emailAddress"
                             />
                         {/* <AppText style={{ color: 'red' }}>{errors.email}</AppText> */}
-                        {<ErrorMessage error={errors.email} visible={touched.email}/>}
-                        <AppTextInput
+                        {/* {<ErrorMessage error={errors.email} visible={touched.email}/>} */}
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
-                            onBlur={() => setFieldTouched("password")}
-                            onChangeText={handleChange("password")}
+                            name="password"
+                            // onBlur={() => setFieldTouched("password")}
+                            // onChangeText={handleChange("password")}
                             placeholder="Password"
                             secureTextEntry
                             textContentType="password"
                         />
                         {/* <AppText style={{ color: 'tomato' }}>{errors.password }</AppText> */}
-                        {<ErrorMessage error={errors.password} visible={touched.password}/>}
+                        {/* {<ErrorMessage error={errors.password} visible={touched.password}/>} */}
                         <AppButton title="Login" 
                         onPress={handleSubmit} color="secondary"/>
                        </>
