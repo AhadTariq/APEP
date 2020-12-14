@@ -21,10 +21,11 @@ import AppPicker from './app/components/AppPicker';
 import FacultyDashboardScreen from './app/screens/FacultyDashboardScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 export default function App() {
   
   return(
-   <LoginScreen/>
+   <ListingEditScreen/>
   )
 }
 

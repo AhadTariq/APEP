@@ -10,7 +10,9 @@ function AppTextInput({ icon, ...otherProps }) {
        <View style={styles.container}>
           {/* Using conditional redering */}
            {icon && <MaterialCommunityIcons name={icon} size={30} color={colors.secondary} style={styles.icon}/>}
-           <TextInput style={defaultStyles.text} {...otherProps}/> 
+           <TextInput 
+                placeholderTextColor={defaultStyles.colors.Lightgrey}
+                style={defaultStyles.text} {...otherProps}/> 
        </View>
     );
 }
