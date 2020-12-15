@@ -10,7 +10,7 @@ import { TouchableWithoutFeedback } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import PickerItem from './PickerItem';
 
-function AppPicker({ icon, items, onSelectItem, selectedItem, placeholder, width="100%" }) {
+function AppPicker({ icon, items, onSelectItem, PickerItemComponent = PickerItem, selectedItem, placeholder, width="100%" }) {
    
     const [modalVisible, setModalVisible] = useState(false);
      
@@ -53,7 +53,7 @@ function AppPicker({ icon, items, onSelectItem, selectedItem, placeholder, width
                 data={items}
                 keyExtractor={items => items.value.toString()}
                 renderItem={({ item })=>
-                    <PickerItem
+                    <PickerItemComponent
                         label={item.label}
                         onPress={() => {
                             setModalVisible(false);
