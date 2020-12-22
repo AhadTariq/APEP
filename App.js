@@ -27,7 +27,6 @@ import FacultyDashboardScreen from './app/screens/FacultyDashboardScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
-import UploadFolderContent from './app/screens/UploadFolderContent';
 export default function App() {
   const [imageUri, setImageUri] = useState();
 
@@ -54,7 +53,9 @@ export default function App() {
 
   return(
    <Screen>
-     <UploadFolderContent />
+     <ImageInput 
+      onChangeImage={(uri) => setImageUri(uri)}
+      imageUri={imageUri}/>
    </Screen>
   )
 }

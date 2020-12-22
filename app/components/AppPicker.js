@@ -22,8 +22,8 @@ function AppPicker({ icon, items, numberOfColumns = 1, onSelectItem, PickerItemC
            {icon && (
                 <MaterialCommunityIcons 
                     name={icon} 
-                    size={20} 
-                    color={colors.danger} 
+                    size={30} 
+                    color={colors.secondary} 
                     style={styles.icon}
                 />
             )}
@@ -37,8 +37,8 @@ function AppPicker({ icon, items, numberOfColumns = 1, onSelectItem, PickerItemC
            
            <MaterialCommunityIcons 
                     name="chevron-down" 
-                    size={20} 
-                    color={colors.danger}
+                    size={20}
+                    color={colors.secondary}
                     style={styles.chevron} 
                 />
        </View>
@@ -69,10 +69,10 @@ function AppPicker({ icon, items, numberOfColumns = 1, onSelectItem, PickerItemC
 
 const styles = StyleSheet.create({
     chevron: {
-        paddingLeft: 250,
+        paddingStart:220,
     },
     container: {
-        backgroundColor: colors.Lightgrey,
+        backgroundColor: colors.Silver,
         borderRadius: 25,
         flexDirection: "row",
         padding: 15,
