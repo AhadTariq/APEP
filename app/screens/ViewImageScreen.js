@@ -6,7 +6,7 @@ import colors from '../config/colors';
 function ViewImageScreen(props) {
     return (
         <View style={styles.container}>
-            <Image resizeMode="contain" style={styles.image}  source={require("../assets/Welcome.jpg")}></Image>
+            <Image resizeMode="contain" style={styles.image}  source={require("../assets/abc.jpeg")}></Image>
             <View style={styles.closeIcon}>
                 <MaterialCommunityIcons name="close" color="white" size={30}></MaterialCommunityIcons>
             </View>
