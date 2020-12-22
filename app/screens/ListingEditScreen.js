@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import FormImagePicker from "../components/forms/FormImagePicker";
 
 import {
   AppForm as Form,
@@ -34,10 +35,12 @@ function ListingEditScreen() {
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker/>
         <FormField maxLength={255} name="title" placeholder="Title" />
         <FormField
           keyboardType="numeric"
