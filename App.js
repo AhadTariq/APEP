@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import {MaterialCommunityIcons} from "@expo/vector-icons";
+import React, {Component} from 'react';
+
 
 import Screen from './app/components/Screen'
 import { StyleSheet, Text, View, Image, SafeAreaView, Button, Alert, Dimensions, TextInput, Switch } from 'react-native';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItems';
 import ImageInput from './app/components/ImageInput';
-
+import ImageInputList from './app/components/ImageInputList';
 
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
@@ -28,34 +30,22 @@ import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
+  const handleAdd = uri => {
+    setImageUris([...imageUris, uri]);
+  };
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-    if(!granted) 
-      alert('You need to anable permission to access the library');
-  }
-
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async() => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if(!result.cancelled)
-      setImageUri(result.uri);
-    } catch (error) {
-      console.log('Error reading an image', error);
-    }
-  }
-
+  const handleRemove = uri => {
+    setImageUris(imageUris.filter((imageUri => imageUri !== uri)))
+  };
   return(
    <Screen>
-     <ImageInput 
-      onChangeImage={(uri) => setImageUri(uri)}
-      imageUri={imageUri}/>
+     <ImageInputList
+      imageUris={imageUris}
+      onAddImage={handleAdd}
+      onRemoveImage={handleRemove}
+        />
    </Screen>
   )
 }
