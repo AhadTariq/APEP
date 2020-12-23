@@ -10,12 +10,12 @@ function WelcomeScreen({ navigation }) {
        style={styles.background}
        source={require("../assets/background.jpg")}>
            <View style={styles.logoContainer}>
-            <Image resizeMode="contain" style={styles.logo} source={require("../assets/logo.jpg")}></Image>
+            <Image resizeMode="contain" style={styles.logo} source={require("../assets/com.png")}></Image>
             <Text style={styles.tagline}>Academic Program Evaluation Portal</Text>
            </View>
            <View style={styles.buttonsContainer}>
            <AppButton title="Login" color="secondary" onPress={() => navigation.navigate("Login")}/>
-           {/* <AppButton title="Register" color="secondary" onPress={() => navigation.navigate("Signup")}/> */}
+           <AppButton title="Register" color="secondary" onPress={() => navigation.navigate("Signup")}/>
            </View>
        </ImageBackground>
     );

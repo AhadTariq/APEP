@@ -57,7 +57,7 @@ function LoginScreen(props) {
                         />
                         {/* <AppText style={{ color: 'tomato' }}>{errors.password }</AppText> */}
                         {/* {<ErrorMessage error={errors.password} visible={touched.password}/>} */}
-                        <SubmitButton title="Login"/>
+                        <SubmitButton title="Login" onSubmit={() => navigation.navigate("Account")}/>
                         {/* <AppButton title="Login" 
                         onPress={handleSubmit} color="secondary"/> */}
                        </>
