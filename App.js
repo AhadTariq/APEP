@@ -14,6 +14,10 @@ import ImageInputList from './app/components/ImageInputList';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+
+
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import AppButton from './app/components/AppButton';
@@ -29,23 +33,42 @@ import FacultyDashboardScreen from './app/screens/FacultyDashboardScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
-export default function App() {
-  const [imageUris, setImageUris] = useState([]);
 
-  const handleAdd = uri => {
-    setImageUris([...imageUris, uri]);
-  };
+const Link = () => {
+const navigation = useNavigation();
 
-  const handleRemove = uri => {
-    setImageUris(imageUris.filter((imageUri => imageUri !== uri)))
-  };
   return(
-   <Screen>
-     <ImageInputList
-      imageUris={imageUris}
-      onAddImage={handleAdd}
-      onRemoveImage={handleRemove}
-        />
-   </Screen>
+  <Button 
+    title="Click"
+    onPress={() => navigation.navigate('FacultyDetails')}
+  />
+)
+}
+const Faculty = ({navigation }) => (
+  <Screen>
+    <Text>Faculty</Text>
+    <Link/>
+  </Screen>
+);
+
+const FacultyDetails = () => (
+  <Screen>
+    <Text>FacultyDetails</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Faculty" component={Faculty}/>
+    <Stack.Screen name="FacultyDetails" component={FacultyDetails}/>
+  </Stack.Navigator>
+);
+export default function App() {
+ 
+  return(
+  <NavigationContainer>
+    <StackNavigator/>
+  </NavigationContainer>
   )
 }
