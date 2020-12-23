@@ -33,6 +33,8 @@ import FacultyDashboardScreen from './app/screens/FacultyDashboardScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 const Link = () => {
 const navigation = useNavigation();
@@ -102,8 +104,8 @@ const TabNavigator = () => (
 export default function App() {
  
   return(
-  <NavigationContainer>
-    <TabNavigator/>
+  <NavigationContainer theme={navigationTheme}>
+    <AuthNavigator/>
   </NavigationContainer>
   )
 }
