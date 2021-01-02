@@ -10,6 +10,8 @@ import Screen from '../components/Screen';
 
 import {ErrorMessage, AppFormField, SubmitButton} from '../components/forms/index';
 import AppPicker from '../components/AppPicker';
+import AppText from '../components/AppText';
+import ImageInputList from '../components/ImageInputList';
 
 
 const validationSchema = Yup.object().shape({
@@ -25,7 +27,7 @@ function UploadFolderContent(props) {
       <Screen style={styles.container}>
             <Text style={styles.tagline}>Upload Folder Contents</Text>
             <Formik
-                initialValues={{firstname: '', lastname: '', email: '', password: ''}}
+                initialValues={{coursename: '', type: '', number: ''}}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}
                 >
@@ -35,9 +37,9 @@ function UploadFolderContent(props) {
                                 style={styles.tagline}
                                 autoCapitalize="words"
                                 autoCorrect={true}
-                                icon="account"
+                                icon="apps"
                                 keyboardType="default"
-                                name="firstname"
+                                name="coursename"
                                 // onBlur={() => setFieldTouched("firstname")}
                                 // onChangeText={handleChange("firstname")}
                                 placeholder="Select Course"
@@ -48,9 +50,9 @@ function UploadFolderContent(props) {
                                 style={defaultStyles.text}
                                 autoCapitalize="words"
                                 autoCorrect={true}
-                                icon="account"
+                                icon="apps"
                                 keyboardType="default"
-                                name="lastname"
+                                name="type"
                                 // onBlur={() => setFieldTouched("lastname")}
                                 // onChangeText={handleChange("lastname")}
                                 onChangeText={text => setLastname(text)}
@@ -58,19 +60,19 @@ function UploadFolderContent(props) {
                                 textContentType="name"
                             />
                             {/* {<ErrorMessage error={errors.lastname} visible={touched}/>} */}
-                            <AppFormField
-                                autoCapitalize="none"
+                            <AppPicker
+                                autoCapitalize="words"
                                 autoCorrect={false}
-                                icon="email"
-                                keyboardType="email-address"
-                                name="email"
+                                icon="apps"
+                                keyboardType="number"
+                                name="number"
                                 // onBlur={() => setFieldTouched("email")}
                                 // onChangeText={handleChange("email")}
-                                placeholder="Email"
-                                textContentType="emailAddress"
+                                placeholder="number"
+                                textContentType="name"
                                 />
                             {/* {<ErrorMessage error={errors.email} visible={touched}/>} */}
-                            <AppFormField
+                            {/* <AppFormField
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="lock"
@@ -80,11 +82,23 @@ function UploadFolderContent(props) {
                                 placeholder="Password"
                                 secureTextEntry
                                 textContentType="password"
-                            />
+                            /> */}
                             {/* {<ErrorMessage error={errors.password} visible={touched}/>} */}
-                            <SubmitButton title="Sign up"/>
+                            {/* <SubmitButton title="Sign up"/> */}
                             {/* <AppButton title="Sign Up" 
                             onPress={handleSubmit} color="secondary"/> */}
+                            <AppText>Upload Model Description:</AppText>
+                            <ImageInputList/>
+                            <AppText>Upload Model Solution:</AppText>
+                            <ImageInputList/>
+                            <AppText>Upload Best Solution:</AppText>
+                            <ImageInputList/>
+                            <AppText>Upload Average Solution:</AppText>
+                            <ImageInputList/>
+                            <AppText>Upload Worst Solution:</AppText>
+                            <ImageInputList/>
+                            <AppButton title="Upload" 
+                            onPress={handleSubmit} color="secondary"/> 
                         </>
                     )}
             

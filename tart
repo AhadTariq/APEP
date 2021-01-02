@@ -1,0 +1,35 @@
+[33m0aa18d1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Till LoginSignup and welcome
+[33m56c7fa2[m AppNavigator
+[33m774b9ef[m AuthNavigation
+[33m2c44839[m Completing navigator with icons
+[33m4b1c706[m Navigatio=ng between screens completed
+[33mb47bbad[m Final image list before starting navigation
+[33m273e1c1[m Check mthod for Image selection
+[33mc273dc2[m ref hook with scrilling view in imageimnput
+[33ma3ab99c[m imageInput list is ready
+[33mf7219c5[m Worjing on Image list
+[33m21a41e8[m Working on Imagelist after picker component
+[33m245e544[m Before Final screens Making
+[33m463135f[m Image Uploading and deleting with Permission module implemented
+[33mb8f6781[m Creating permssions module
+[33me3bbe0b[m Building CategoryPickerItem Component
+[33m49b3980[m Flexible Architecture for picker components
+[33m2f64f25[m Input componenets with dynamic width
+[33m1b42ccb[m refactoring little bit
+[33m1806978[m Element type issue in "ListingEditScreen" after copying from end 7 folder
+[33m3d468d5[m Creating new folder due to too many components
+[33m517dbcb[m Till using hook
+[33mab64e25[m Using hook for Signup buttin too
+[33m1cec970[m Using hook for Submit button
+[33m867df95[m After Refactoring of LoginScreen Page Using Formik
+[33m3bd0773[m Before Refactoring
+[33m974f97e[m Yup Validation of Signup Screen
+[33m52c7e22[m UsinG yup
+[33m05574a3[m Before using formik
+[33mbf44df2[m Switch Addtion
+[33m5371310[m Till Account Screen
+[33mffb1dbc[m Till refreshing Testing
+[33m78265a9[m new
+[33m0e0c9cd[m Completing Welcome page
+[33m7a9c4b1[m Login Workings
+[33m0d75a9d[m Created a new Expo app
